@@ -1,0 +1,26 @@
+<header>
+    <nav>
+        <a href="{{ url_for('feed') }}" class="logo-pinterest" style="text-decoration: none;">
+            <svg
+              height="40"
+              viewbox="-3 -3 82 82"
+              width="40"
+              style="display: block"
+            >
+            <title>FakePinterest Logo</title>
+              <circle cx="38" cy="38" fill="white" r="40"></circle>
+              <path
+                  d="M27.5 71c3.3 1 6.7 1.6 10.3 1.6C57 72.6 72.6 57 72.6 37.8 72.6 18.6 57 3 37.8 3 18.6 3 3 18.6 3 37.8c0 14.8 9.3 27.5 22.4 32.5-.3-2.7-.6"
+                  fill="#e60023"
+                  fill-rule="evenodd"
+              ></path>
+            </svg>
+            <h1>FakePinterest</h1>
+        </a>
+
+        <div class="restante-nav">
+            <p class="botao-perfil"><a href="{{ url_for('perfil', id_usuario=current_user.id) }}" class="link-nav">Perfil</a></p>
+            <a href="{{ url_for('homepage') }}" class="link-nav">Sair</a>
+        </div>
+    </nav>
+</header>

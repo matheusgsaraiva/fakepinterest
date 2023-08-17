@@ -1,0 +1,74 @@
+{% extends "homepage.html" %}
+
+{% block titulo %}
+    Criar Conta - FakePinterest
+{% endblock %}
+
+{% block formulario %}
+
+          <form method="POST" class="popup">
+              {{ form.csrf_token }}
+              <svg
+                  height="40"
+                  viewbox="-3 -3 82 82"
+                  width="40"
+                  style="display: block"
+              >
+                  <title>Pinterest Logo</title>
+                  <circle cx="38" cy="38" fill="white" r="40"></circle>
+                  <path
+                      d="M27.5 71c3.3 1 6.7 1.6 10.3 1.6C57 72.6 72.6 57 72.6 37.8 72.6 18.6 57 3 37.8 3 18.6 3 3 18.6 3 37.8c0 14.8 9.3 27.5 22.4 32.5-.3-2.7-.6"
+                      fill="#e60023"
+                      fill-rule="evenodd"
+                  ></path>
+              </svg>
+
+              <h2>Bem-vindo(a) ao Fake Pinterest</h2>
+
+                    <div class="div-input">
+                        {{ form.email.label(class="label") }}
+                        {% if form.email.errors %}
+                            {% for erro in form.email.errors %}
+                                <p style="color: red">{{ erro }}</p>
+                            {% endfor %}
+                        {% endif %}
+                        {{ form.email(class="input") }}
+                    </div>
+
+                    <div class="div-input">
+                        {{ form.username.label(class="label") }}
+                        {% if form.username.errors %}
+                            {% for erro in form.username.errors %}
+                                <p style="color: red">{{ erro }}</p>
+                            {% endfor %}
+                        {% endif %}
+                        {{ form.username(class="input") }}
+                    </div>
+
+                    <div class="div-input">
+                        {{ form.senha.label(class="label") }}
+                        {% if form.senha.errors %}
+                            {% for erro in form.senha.errors %}
+                                <p style="color: red">{{ erro }}</p>
+                            {% endfor %}
+                        {% endif %}
+                        {{ form.senha(class="input") }}
+                    </div>
+
+                    <div class="div-input">
+                        {{ form.confirmacao_senha.label(class="label") }}
+                        {% if form.confirmacao_senha.errors %}
+                            {% for erro in form.confirmacao_senha.errors %}
+                                <p style="color: red">{{ erro }}</p>
+                            {% endfor %}
+                        {% endif %}
+                        {{ form.confirmacao_senha(class="input") }}
+                    </div>
+
+                    <div class="div-input">
+                        {{ form.botao_confirmacao(class="botao-login") }}
+                        <a href="{{ url_for('homepage') }}" class="link-criarconta">Já tem uma conta? Faça Login </a>
+                    </div>
+
+          </form>
+          {% endblock %}
